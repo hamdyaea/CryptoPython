@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blockchain Python App - Hamdy Abou El Anein</title>
+  </head>
+  <body>
+    <h1>Blockchain Python App - Hamdy Abou El Anein </h1>
+    <button id="view-blockchain-btn">View blockchain</button>
+    <div id="view-blockchain-content"></div>
+    <br>
+    <button id="mine-block-btn">Mine new block</button>
+    <div id="mine-block-content"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#view-blockchain-btn").click(function() {
+          $.ajax({
+            type: "GET",
+            url: "/blocks",
+            success: function(response) {
+              var blocks = response;
+              var html = "<ul>";
+              for (var i = 0; i < blocks.length; i++) {
+                var block = blocks[i];
+                html += "<li>Block " + block.id + ": Hash = " + block.hash + ", Previous hash = " + block.previous_hash + "</li>";
+              }
+              html += "</ul>";
+              $("#view-blockchain-content").html(html);
+            }
+          });
+        });
+
+        $("#mine-block-btn").click(function() {
+          $.ajax({
+            type: "GET",
+            url: "/add_block",
+            success: function(response) {
+              var block = response;
+              var html = "New block mined: Hash = " + block.hash + ", Previous hash = " + block.previous_hash;
+              $("#mine-block-content").html(html);
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+
