@@ -1,13 +1,12 @@
-
 #!/usr/bin/env python3
 '''
-Name: 
-Email: 
-Date of creation:  
-Last update:
-Version: 
-Description:  
-Example of use: 
+Name: Hamdy Abou El Anein    
+Email: hamdy.aea@protonmail.com
+Date of creation: 04.04.2023
+Last update:05.04.2023
+Version: 1.0.0
+Description:  This is the proof of concept of a blockchain in Python with flask.
+Example of use: http://astrometry.pythonanywhere.com/
 '''
 import hashlib
 import datetime
