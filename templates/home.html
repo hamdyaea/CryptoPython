@@ -45,7 +45,7 @@
   </head>
   <body>
     <h1>Blockchain Python App - Hamdy Abou El Anein </h1>
-    <h3>The blockchain is deleted every 24h</h3>
+    <h3>Educational local demo; writes disabled by default</h3>
     <h4>This is a proof of concept of a blockchain in python</h4>
     <h4>The source code is there : https://github.com/hamdyaea/CryptoPython</h4>
     <button id="view-blockchain-btn">View blockchain</button>
@@ -74,7 +74,7 @@
         });
     $("#mine-block-btn").click(function() {
       $.ajax({
-        type: "GET",
+        type: "POST",
         url: "/add_block",
         success: function(response) {
           var block = response;
